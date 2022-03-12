@@ -48,14 +48,34 @@ def squares(maximum):
         yield number ** 2
 
 
-for i in EvenNumber(2):
-    print(i)
+def range_generator(from_, to_, step):
+    number = from_
+    if not step:
+        raise ValueError("Step cannot be 0")
 
-for i in even_number(2):
-    print(i)
+    if step < 0:
+        if from_ < to_:
+            raise ValueError("In case of negative step, from_ has to be higher than to_")
+        while number > to_:
+            yield number
+            number += step
+    else:
+        while number < to_:
+            yield number
+            number += step
 
-for i in Squares(2):
-    print(i)
 
-for i in squares(2):
-    print(i)
+for number in range_generator(8, 1, -2):
+    print(number)
+
+# for i in EvenNumber(2):
+#     print(i)
+#
+# for i in even_number(2):
+#     print(i)
+#
+# for i in Squares(2):
+#     print(i)
+#
+# for i in squares(2):
+#     print(i)
