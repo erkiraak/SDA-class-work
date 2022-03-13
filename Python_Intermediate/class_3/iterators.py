@@ -65,8 +65,8 @@ def range_generator(from_, to_, step):
             number += step
 
 
-for number in range_generator(8, 1, -2):
-    print(number)
+# for number in range_generator(8, 1, -2):
+#     print(number)
 
 # for i in EvenNumber(2):
 #     print(i)
@@ -79,3 +79,9 @@ for number in range_generator(8, 1, -2):
 #
 # for i in squares(2):
 #     print(i)
+
+generator_comprehension = (x ** 2 for x in range(10))
+
+print(generator_comprehension)
+print(list(generator_comprehension))
+for i in generator_comprehension: print(i)

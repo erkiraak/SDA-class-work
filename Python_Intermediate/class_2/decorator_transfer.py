@@ -83,13 +83,13 @@ def find_customer(name):
 def check_amount(amount):
     try:
         amount = float(amount)
-        if amount <= 0:
+        if amount < 3000:
             raise ZeroDivisionError
     except ValueError:
         print("Invalid amount")
         return None
     except ZeroDivisionError:
-        print("Amount has to be larger than zero")
+        print("Amount has to at least than 3000")
         return None
     except TypeError:
         return None
@@ -100,6 +100,11 @@ def check_amount(amount):
 def check_time(months):
     try:
         months = int(months)
+        if months < 3:
+            raise ZeroDivisionError
+    except ZeroDivisionError:
+        print("Loan duration has to be at least 3 months")
+        return None
     except ValueError:
         print("Invalid number of months")
         return None
