@@ -79,9 +79,39 @@ def range_generator(from_, to_, step):
 #
 # for i in squares(2):
 #     print(i)
+#
+# generator_comprehension = (x ** 2 for x in range(10))
+#
+# print(generator_comprehension)
+# print(list(generator_comprehension))
+# for i in generator_comprehension: print(i)
 
-generator_comprehension = (x ** 2 for x in range(10))
 
-print(generator_comprehension)
-print(list(generator_comprehension))
-for i in generator_comprehension: print(i)
+def fibonacci_numbers(amount, number = None):
+    count = 0
+    x = 0
+    y = 1
+    if number is None:
+        while count < amount:
+            yield x
+            x, y = y, x + y
+            count += 1
+    elif amount >= number:
+        while number != count:
+            x, y = y, x + y
+            count += 1
+        yield x
+    else:
+        raise ValueError("Error in input")
+
+
+
+
+for number in fibonacci_numbers(15):
+    print(number)
+
+for number in fibonacci_numbers(10, 5):
+    print(number)
+
+for number in fibonacci_numbers(5, 10):
+    print(number)
