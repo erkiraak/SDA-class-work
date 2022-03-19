@@ -14,4 +14,7 @@ emails = [
 ]
 
 for email in emails:
-    print(re.search(pattern, email).group(0))
+    try:
+        print(re.search(pattern, email).group(0))
+    except AttributeError:
+        pass
