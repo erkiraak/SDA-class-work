@@ -107,11 +107,15 @@ def fibonacci_numbers(amount, number = None):
 
 
 
-for number in fibonacci_numbers(15):
-    print(number)
+# for number in fibonacci_numbers(15):
+#     print(number)
+#
+# for number in fibonacci_numbers(10, 5):
+#     print(number)
+#
+# for number in fibonacci_numbers(5, 10):
+#     print(number)
 
-for number in fibonacci_numbers(10, 5):
-    print(number)
+tuple = (i*i for i in range(5))
 
-for number in fibonacci_numbers(5, 10):
-    print(number)
+print(type(tuple))

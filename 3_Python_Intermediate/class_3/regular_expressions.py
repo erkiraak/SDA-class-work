@@ -23,7 +23,7 @@ for email in emails:
 # Example 2 UUID
 # Groups of lengths - 8-4-4-4-12
 # UUID will involve numbers and characters
-#
+
 
 pattern = re.compile("(^\w{8})-(\w{4})-(\w{4})-(\w{4})-(\w{12})$")
 
@@ -46,3 +46,5 @@ for value in uuid:
     match = pattern.search(value)
     if match:
         print(match.group())
+
+

@@ -1,3 +1,5 @@
+import os
+
 class Animal:
     def __init__(self, name, age, weight, breed):
         self.name = name
@@ -6,7 +8,7 @@ class Animal:
         self.breed = breed
 
     def __str__(self):
-        return f"Name: {self.name}, age: {self.age}, weight: {self.weight}"
+        return f"Name: {self.name}, age: {self.age}, weight: {self.weight}, breed: {self.breed}"
 
 
 class Dog(Animal):
@@ -18,7 +20,7 @@ class Dog(Animal):
         print("woof")
 
     def __str__(self):
-        return super().__str__() + " " + self.name
+        return super().__str__() + ", color:" + self.color
 
 
 class Cat(Animal):
@@ -27,7 +29,7 @@ class Cat(Animal):
         self.fur = fur
 
     def __str__(self):
-        return super().__str__() + " " + self.breed
+        return super().__str__() + ", fur:" + str(self.fur)
 
 
 class CatDog(Cat, Dog):
