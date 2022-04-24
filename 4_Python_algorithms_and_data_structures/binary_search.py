@@ -34,3 +34,5 @@ def bin_search_with_recursion(arr, target, start=0, stop=None):
 
 
 print(bin_search_with_recursion([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 11))
+
+

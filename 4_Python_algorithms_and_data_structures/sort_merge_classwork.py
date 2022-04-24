@@ -8,12 +8,16 @@
        ...
 2. We merge the two sorted halves, getting a sorted list.
 """
+import random
+
 """
 Given a list of two sorted array - merge the two sorted array into 1 array.
 We will assume that the list has been divided into two.
 e.g 
 [5, 10, 20, 29] [15, 18, 22, 30] 
 """
+
+
 def merge_sort(lst):
     if len(lst) <= 1:
         return lst
@@ -43,6 +47,9 @@ def merge_two_lists(list_left, list_right):
         right_i += 1
     return sorted_list
 
-lst = [5, 10, 20, 29, 15, 18, 4, 30, 1]
-result = merge_sort(lst)
-print(f"Sorted list: {result}")
+# lst = [5, 10, 20, 29, 15, 18, 4, 30, 1]
+for i in range(5, 20):
+    lst = [random.randint(0, 100) for _ in range(i)]
+    result = merge_sort(lst)
+    print(f"Sorted list: {result}")
+
