@@ -1,11 +1,14 @@
-import datetime, time
+import datetime
+import time
 from contextlib import contextmanager
+
 
 class ProcessTimer:
     def __init__(self):
         self.start = None
         self.stop = None
         self.difference = None
+
     def __enter__(self):
         self.start = datetime.datetime.now()
         return self.start
@@ -15,6 +18,7 @@ class ProcessTimer:
         self.difference = self.stop - self.start
 
         print(self.difference)
+
 
 @contextmanager
 def process_timer():

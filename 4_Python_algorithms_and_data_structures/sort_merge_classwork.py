@@ -47,9 +47,9 @@ def merge_two_lists(list_left, list_right):
         right_i += 1
     return sorted_list
 
+
 # lst = [5, 10, 20, 29, 15, 18, 4, 30, 1]
 for i in range(5, 20):
-    lst = [random.randint(0, 100) for _ in range(i)]
-    result = merge_sort(lst)
+    int_lst = [random.randint(0, 100) for _ in range(i)]
+    result = merge_sort(int_lst)
     print(f"Sorted list: {result}")
-

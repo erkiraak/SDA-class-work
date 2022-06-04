@@ -18,6 +18,7 @@ class Girl(Person):
         self.number_of_children = 0
         self.gender = "F"
 
+
 class Father(Person):
     def __init__(self):
         self.number_of_children = 0

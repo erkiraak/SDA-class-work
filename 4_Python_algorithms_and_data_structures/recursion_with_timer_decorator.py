@@ -1,4 +1,5 @@
-import datetime, time
+import datetime
+import time
 from contextlib import contextmanager
 import timeit
 
@@ -6,7 +7,7 @@ import timeit
 def process_timer_function(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
-        result = func(*args, **kwargs)
+        _result = func(*args, **kwargs)
         end_time = time.time()
         return f'{func.__name__} took {end_time - start_time} seconds'
 
@@ -52,7 +53,7 @@ def combine_with_decorator(list):
 
 if __name__ == "__main__":
     for item in [1_000_000, 10_000_000, 100_000_000]:
-        with process_timer() as t:
+        with process_timer():
             minimum_from_list(range(item, 0, -1))
         minimum_from_list_with_wrapper(range(item, 0, -1))
         print(f"timeit took {timeit.timeit(lambda: minimum_from_list(range(item, 0, -1)), number=1)} seconds")
@@ -60,7 +61,7 @@ if __name__ == "__main__":
     print("")
 
     for item in [100, 1_000, 10_000]:
-        with process_timer() as t:
+        with process_timer():
             combine(range(item))
         combine_with_decorator(range(item))
         print(f"timeit took {timeit.timeit(lambda: combine(range(item)), number=1)} seconds")

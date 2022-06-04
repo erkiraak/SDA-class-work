@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass(eq=True, order=True)
-class Stack():
+class Stack:
     def __init__(self, input_list=None):
         if input_list is None:
             self.__list = []

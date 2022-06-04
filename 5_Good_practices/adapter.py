@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 """
 Target interface - class Learner
 """
@@ -49,7 +50,8 @@ class Student:
     def get_grades(self):
         return self.grades
 
-class StudentAdaper(Learner):
+
+class StudentAdapter(Learner):
     def __init__(self, old_class):
         self._student = old_class
 
@@ -64,8 +66,8 @@ class StudentAdaper(Learner):
 
 
 if __name__ == "__main__":
-    learners = [StudentAdaper(Student("John", "Smith", 18, "johnsmith@gmail.com", [90, 80, 70])),
-                StudentAdaper(Student("Jane", "Doe", 19, "janedoe@fgasd.com", [80, 70, 60])),
-                StudentAdaper(Student("Jack", "Black", 20, "jackva@fassa.ede", [70, 60, 50]))]
+    learners = [StudentAdapter(Student("John", "Smith", 18, "johnsmith@gmail.com", [90, 80, 70])),
+                StudentAdapter(Student("Jane", "Doe", 19, "janedoe@fgasd.com", [80, 70, 60])),
+                StudentAdapter(Student("Jack", "Black", 20, "jackva@fassa.ede", [70, 60, 50]))]
     for learner in learners:
         print(learner.get_full_name() + " " + str(learner.is_adult()) + " " + str(learner.get_results()))

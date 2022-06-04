@@ -37,5 +37,3 @@ for _ in range(10):
     print(f"input list {input_list}")
     output_list = quick_sort(input_list)
     print(f"output list {output_list}")
-
-

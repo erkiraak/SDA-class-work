@@ -1,6 +1,7 @@
 from timeit import timeit
 from functools import cache
 
+
 @cache
 def permutations(string: str):
     list_of_permutations = []
@@ -14,4 +15,5 @@ def permutations(string: str):
     return list_of_permutations
 
 
-print(timeit(stmt=lambda: permutations("12345678"), number=100, setup="from timeit import timeit\nfrom functools import cache"))
+print(timeit(stmt=lambda: permutations("12345678"), number=100,
+             setup="from timeit import timeit\nfrom functools import cache"))

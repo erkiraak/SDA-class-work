@@ -3,6 +3,7 @@ import json, pandas, csv, io
 with open('number_data.txt') as f:
     json_data = json.load(f)
 
+
 def get_avg(*args):
     allowed_data_types = (int, float)
     num_args = [arg for arg in args if isinstance(arg, allowed_data_types)]
@@ -29,7 +30,6 @@ Live in Mississippi, 2011, -
 Live at the Gold Dollar, 2012, -
 Nine Miles from the White City, 2013, -"""
 
-
 lines = csv_data.splitlines()
 reader = csv.reader(lines, delimiter=',', skipinitialspace=True)
 with open("data.csv", "w") as csv_data_file:
@@ -47,4 +47,3 @@ df2.to_json("data2.json", "records")
 
 with open("data.json") as data:
     print(json.load(data))
-

@@ -17,6 +17,7 @@ def sleep_sort_descending(integer):
     time.sleep(0.1 * (max(int_list) - integer))
     sorted_list_descending.append(integer)
 
+
 for number in int_list:
     td = threading.Thread(target=sleep_sort_descending, args=(number,))
     td.start()
@@ -27,7 +28,6 @@ for t in processes:
 
 processes.clear()
 
-
 for number in int_list:
     ta = threading.Thread(target=sleep_sort_ascending, args=(number,))
     ta.start()
@@ -36,9 +36,6 @@ for number in int_list:
 for t in processes:
     t.join()
 
-
-
 print(sorted_list_ascending)
 print(sorted_list_descending)
 print(sorted_list_descending == sorted_list_ascending[::-1])
-

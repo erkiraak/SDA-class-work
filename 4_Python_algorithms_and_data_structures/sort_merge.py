@@ -1,6 +1,5 @@
 import random
 import timeit
-from sort_bubble import bubble_sort
 
 
 def merge_sort1(input_list):
@@ -22,6 +21,7 @@ def merge_sort1(input_list):
         return_list = input_list
     return return_list
 
+
 def merge_sort2(input_list):
     return_list = []
     if len(input_list) >= 2:
@@ -40,8 +40,8 @@ def merge_sort2(input_list):
     return return_list
 
 
-input_list = [random.randint(0, 100000) for _ in range(100000)]
+int_list = [random.randint(0, 100000) for _ in range(100000)]
 
 # print(timeit.timeit(lambda: bubble_sort(input_list), number=10))
-print(timeit.timeit(lambda: merge_sort1(input_list), number=100))
-print(timeit.timeit(lambda: merge_sort2(input_list), number=100))
+print(timeit.timeit(lambda: merge_sort1(int_list), number=100))
+print(timeit.timeit(lambda: merge_sort2(int_list), number=100))

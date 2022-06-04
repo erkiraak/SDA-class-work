@@ -11,7 +11,8 @@ def recursive_sum(integer: int):
     except ValueError:
         return "Only positive integers allowed"
 
-print(recursive_sum("a"))
-print(recursive_sum(-2))
-print(recursive_sum(100))
 
+if __name__ == '__main__':
+    print(recursive_sum("a"))
+    print(recursive_sum(-2))
+    print(recursive_sum(100))
