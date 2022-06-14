@@ -146,8 +146,8 @@ data = {
 }
 
 #
-# create_database('cinematic')
-#
+create_database('cinematic')
+## drop_database("cinematic")
 # for database, table in tables.items():
 #     for table_name, table_schema in table.items():
 #         create_tables(database, table_name, table_schema)
@@ -167,4 +167,5 @@ data = {
 # sql_query(select_query_2002)
 # sql_query("select * from movies left join directors on movies.movie_director_id = directors.director_id")
 
-print(show_tables("cinematic"))
+# print(show_tables("cinematic"))
+

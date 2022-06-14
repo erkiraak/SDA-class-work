@@ -1,5 +1,5 @@
 from os import environ
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, UniqueConstraint
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, UniqueConstraint, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -36,7 +36,7 @@ class Movies(base):
     movie_year = Column(Integer, nullable=False)
     movie_category = Column(String(50), nullable=False)
     movie_director_id = Column(Integer, ForeignKey('directors.director_id'))
-    movie_rating = Column(Integer, nullable=False)
+    movie_rating = Column(Float, nullable=False)
     directors = relationship("Directors", back_populates="movies")
     UniqueConstraint(movie_name, movie_year, movie_director_id)
 
