@@ -9,6 +9,7 @@ db_s = Session()
 
 
 def task_8():
+
     with db_s.begin():
         print("\nList the names and surnames of all directors whose films were made between 2011 and 2014, "
               "and the rating of their films is less than 9")

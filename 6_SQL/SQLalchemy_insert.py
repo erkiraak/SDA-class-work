@@ -3,7 +3,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import sessionmaker
 from SQLalchemy_base import Movies, Directors, PASSWORD
 
-eng = create_engine(f'mysql+mysqlconnector://root:{PASSWORD}@localhost:3306/cinematic')
+eng = create_engine(f'mysql+mysqlconnector://root:{PASSWORD}@localhost:3306/cinematic', echo=True)
 
 Session = sessionmaker(bind=eng)
 db_session = Session()
