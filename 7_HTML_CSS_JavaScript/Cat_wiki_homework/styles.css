@@ -1,0 +1,59 @@
+table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 0px 5px;
+        }
+
+table img {
+        width: 100px;
+        height: auto;
+        }
+
+.nav_bar {
+        overflow: hidden;
+        background-color: black;
+        }
+
+.nav_bar_right {
+        float: right;
+        }
+
+.nav_bar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+.nav_bar a:hover {
+        background-color: red;
+        }
+
+.nav_bar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+.embedded_video {
+        padding:50px;
+        text-align: center
+        }
+
+.top_picture {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius:30%;
+        padding:10px;
+        }
+
+#myHeader {
+        background-color: lightblue;
+        color: blue;
+        padding: 0px;
+        text-align: center;
+        }

@@ -27,6 +27,18 @@ CSS - Cascading Style Sheets
 CSS can be added to HTML documents in 3 ways:
 
 
-    Inline - by using the style attribute inside HTML elements
-    Internal - by using a <style> element in the <head> section
+    Inline - by using the style attribute inside HTML elements <img style="...">
+    Internal - by using a <style> element in the <head> section 
     External - by using a <link> element to link to an external CSS file
+
+
+HTML Layout Elements:
+
+    <header> - Defines a header for a document or a section
+    <nav> - Defines a set of navigation links
+    <section> - Defines a section in a document
+    <article> - Defines an independent, self-contained content
+    <aside> - Defines content aside from the content (like a sidebar)
+    <footer> - Defines a footer for a document or a section
+    <details> - Defines additional details that the user can open and close on demand
+    <summary> - Defines a heading for the <details> element

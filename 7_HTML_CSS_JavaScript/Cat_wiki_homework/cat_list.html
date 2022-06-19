@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>List of cats</title>
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="styles.css">
 
-    table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            text-align: center;
-            padding: 0px 5px;
-        }
-    .ul_bar {
-            list-style-type: none;
-            margin: 0 10;
-            padding: 0;
-        }
-    .ul_bar li{
-            display: inline-block;
-        }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
 </head>
 <body>
 
-<ul class="ul_bar">
-  <li><a href="index.html">Index</a></li>
-  <li><a href="CatList.html">List of cats</a></li>
+<script>
+$(document).ready(function () {
+    $('#catTable').DataTable();
+});
 
-</ul>
 
-<table>
+</script>
+
+<div class="nav_bar">
+    <a href="index.html">Index</a>
+    <a class="active" href="cat_list.html">List of cats</a>
+    <a href="abyssinian.html">Abyssinian</a>
+    <a href="balinese.html">Balinese</a>
+    <a href="bengal.html">Bengal</a>
+    <a href="exotic_shorthair.html">Exotic Shorthair</a>
+    <a href="himalayan.html">Himalayan</a>
+    <a href="maine_coon.html">Maine Coon</a>
+    <a href="norwegian_forest_cat.html">Norwegian Forest Cat</a>
+    <div class="nav_bar_right">
+        <a href="javascript:history.back()">Go Back</a>
+    </div>
+</div>
+
+<table id="catTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
     <tr id="myHeader">
         <th>Breed</th>
         <th>Location of origin</th>
@@ -39,30 +48,31 @@
         <th>Coat pattern</th>
         <th>Image</th>
     </tr>
-
+    </thead>
+    <tbody>
     <tr>
-        <th><a href="Abyssinian.html" title="Abyssinian cat">Abyssinian</a></th>
+        <th><a href="abyssinian.html" title="Abyssinian cat">Abyssinian</a></th>
         <td>Unspecified, but somewhere in Afro-Asia, likely <a href="https://en.wikipedia.org/wiki/Ethiopia"
                                                                title="Ethiopia">Ethiopia</a></td>
         <td>Natural</td>
         <td>Semi-foreign</td>
         <td>Short</td>
         <td>Ticked tabby</td>
-        <td><img alt="Abyssinian" src="Abyssinian.png" decoding="async" width="100" height="143"></td>
+        <td><img alt="Abyssinian" src="abyssinian.png"></td>
     </tr>
 
     <tr>
-        <th><a href="Balinese.html" title="Balinese cat">Balinese</a></th>
+        <th><a href="balinese.html" title="Balinese cat">Balinese</a></th>
         <td>Developed in United States foundation stock from Thailand</td>
         <td>Mutation of the Siamese</td>
         <td>Semi-foreign</td>
         <td>Long</td>
         <td>Colorpoint</td>
-        <td><img alt="Balinese" src="Balinese.png" decoding="async" width="100" height="80"></td>
+        <td><img alt="Balinese" src="balinese.png"></td>
     </tr>
 
     <tr>
-        <th><a href="Bengal.html" title="Bengal cat">Bengal</a></th>
+        <th><a href="bengal.html" title="Bengal cat">Bengal</a></th>
         <td>Developed in United States, but created in Asia</td>
         <td>Hybrid of the <a href="https://en.wikipedia.org/wiki/Abyssinian_cat" title="Abyssinian cat">Abyssinian</a>
             and <a href="https://en.wikipedia.org/wiki/Egyptian_Mau" title="Egyptian Mau">Egyptian Mau</a> ×&nbsp;<a
@@ -72,11 +82,11 @@
         <td>Large</td>
         <td>Short</td>
         <td>Spotted, marbled, or rosetted</td>
-        <td><img alt="Bengal" src="Bengal.png" decoding="async" width="100" height="140"></td>
+        <td><img alt="Bengal" src="bengal.png"></td>
     </tr>
 
     <tr>
-        <th><a href="ExoticShorthair.html" title="Exotic Shorthair">Exotic Shorthair</a></th>
+        <th><a href="exotic_shorthair.html" title="Exotic Shorthair">Exotic Shorthair</a></th>
         <td>United States</td>
         <td>Crossbreed between the <a href="https://en.wikipedia.org/wiki/American_Shorthair"
                                       title="American Shorthair">American Shorthair</a>
@@ -84,39 +94,40 @@
         <td>Cobby</td>
         <td>Short</td>
         <td>All</td>
-        <td><img alt="Exotic Shorthair" src="ExoticShorthair.png" decoding="async" width="100" height="140"></td>
+        <td><img alt="Exotic Shorthair" src="exotic_shorthair.png"></td>
     </tr>
 
     <tr>
-        <th><a href="Himalayan.html" title="Himalayan cat">Himalayan</a> or<br>Colorpoint Persian</th>
+        <th><a href="himalayan.html" title="Himalayan cat">Himalayan</a> or<br>Colorpoint Persian</th>
         <td>United States and United Kingdom</td>
         <td>Crossbreed between the <a href="https://en.wikipedia.org/wiki/Persian_cat" title="Persian cat">Persian</a>
             and <a href="https://en.wikipedia.org/wiki/Siamese_cat" title="Siamese cat">Siamese</a></td>
         <td>Cobby</td>
         <td>Long</td>
         <td>Colorpoint</td>
-        <td><img alt="Himalayan Persian" src="Himalayan.png" decoding="async" width="100" height="80"></td>
+        <td><img alt="Himalayan Persian" src="himalayan.png"></td>
     </tr>
 
     <tr>
-        <th><a href="MaineCoon.html" title="Maine Coon">Maine Coon</a></th>
+        <th><a href="maine_coon.html" title="Maine Coon">Maine Coon</a></th>
         <td>United States</td>
         <td>Natural, crossbreed</td>
         <td>Large</td>
         <td>Semi-long to long</td>
         <td>All</td>
-        <td><img alt="Maine Coon" src="MaineCoon.png" decoding="async" width="100" height="150"></td>
+        <td><img alt="Maine Coon" src="maine_coon.png"></td>
     </tr>
 
     <tr>
-        <th><a href="NorwegianForestCat.html" title="Norwegian Forest cat">Norwegian Forest Cat</a></th>
+        <th><a href="norwegian_forest_cat.html" title="Norwegian Forest cat">Norwegian Forest Cat</a></th>
         <td>Norway</td>
         <td>Natural</td>
         <td>Cobby</td>
         <td>Long</td>
         <td>All but colorpoint</td>
-        <td><img alt="Norwegian Forest Cat" src="NorwegianForestCat.png" decoding="async" width="100" height="98"></td>
+        <td><img alt="Norwegian Forest Cat" src="norwegian_forest_cat.png"></td>
     </tr>
+    </tbody>
 </table>
 
 </body>
