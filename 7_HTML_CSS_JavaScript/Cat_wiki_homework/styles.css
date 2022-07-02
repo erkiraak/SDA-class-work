@@ -10,6 +10,42 @@ table img {
         height: auto;
         }
 
+.body_index {
+        background-color: white
+        }
+
+.body_abyssinian {
+        background-color: #DCDBDB;
+        }
+
+.body_balinese {
+        background-color: #2f4353;
+        background-image: linear-gradient(315deg, #92222B 0%, #2f4353 74%);
+        }
+
+.body_bengal {
+        background-color: #671119;
+        background-image: linear-gradient(315deg, #671119 0%, #000000 74%);
+        color: white;
+        }
+
+.body_exotic_shorthair {
+        background-color: #8F886C;
+        }
+
+.body_himalayan {
+        background-color: #CAD4CF;
+        }
+
+.body_maine_coon {
+        background-color: #291C1C;
+        color: white;
+        }
+
+.body_norwegian_forest_cat {
+        background-color:  #98754E;
+        }
+
 .nav_bar {
         overflow: hidden;
         background-color: black;
@@ -57,3 +93,5 @@ table img {
         padding: 0px;
         text-align: center;
         }
+
+
