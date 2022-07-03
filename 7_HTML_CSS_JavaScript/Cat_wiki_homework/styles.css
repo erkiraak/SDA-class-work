@@ -1,97 +1,110 @@
 table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-        padding: 0px 5px;
-        }
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 0px 5px;
+}
 
 table img {
-        width: 100px;
-        height: auto;
-        }
+    width: 100px;
+    height: auto;
+}
 
 .body_index {
-        background-color: white
-        }
+    background-color: white
+}
 
 .body_abyssinian {
-        background-color: #DCDBDB;
-        }
+    background-color: #DCDBDB;
+}
 
 .body_balinese {
-        background-color: #2f4353;
-        background-image: linear-gradient(315deg, #92222B 0%, #2f4353 74%);
-        }
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #92222B 0%, #2f4353 74%);
+    color: white;
+}
 
 .body_bengal {
-        background-color: #671119;
-        background-image: linear-gradient(315deg, #671119 0%, #000000 74%);
-        color: white;
-        }
+    background-color: #671119;
+    background-image: linear-gradient(315deg, #671119 0%, #000000 74%);
+    color: white;
+}
 
 .body_exotic_shorthair {
-        background-color: #8F886C;
-        }
+    background-color: #8F886C;
+}
 
 .body_himalayan {
-        background-color: #CAD4CF;
-        }
+    background-color: #CAD4CF;
+}
 
 .body_maine_coon {
-        background-color: #291C1C;
-        color: white;
-        }
+    background-color: #291C1C;
+    color: white;
+}
 
 .body_norwegian_forest_cat {
-        background-color:  #98754E;
-        }
+    background-color: #98754E;
+}
 
-.nav_bar {
-        overflow: hidden;
-        background-color: black;
-        }
 
 .nav_bar_right {
-        float: right;
-        }
+    float: right;
+}
+
+.nav_bar {
+    float: left;
+    width: 100%;
+    background-color: black;
+}
 
 .nav_bar a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 10px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        }
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
 
 .nav_bar a:hover {
-        background-color: red;
-        }
+    background-color: red;
+}
 
 .nav_bar a.active {
-  background-color: #04AA6D;
-  color: white;
+    background-color: #04AA6D;
+    color: white;
 }
 
 
 .embedded_video {
-        padding:50px;
-        text-align: center
-        }
+    padding: 50px;
+    text-align: center
+}
 
 .top_picture {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius:30%;
-        padding:10px;
-        }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30%;
+    padding: 10px;
+}
 
 #myHeader {
-        background-color: lightblue;
-        color: blue;
-        padding: 0px;
-        text-align: center;
-        }
+    background-color: lightblue;
+    color: blue;
+    padding: 0px;
+    text-align: center;
+}
+
+
+#catHeader {
+    color: red;
+    font-family: arial, serif;
+    font-size: 200%;
+    text-align: center;
+}
+
+
 
 
