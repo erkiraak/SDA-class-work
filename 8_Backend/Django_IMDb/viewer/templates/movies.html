@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<ul>
+  {% for m in movies_data %}
+    <li> <a href="{% url 'title' m.pk %}">{{m.title}}</a> - {{m.release_year}}</li>
+  {% endfor %}`
+</ul>
+
+<br>
+
+<a href="{% url 'create_movie' %}">Create Movie</a>
+
+{% endblock %}

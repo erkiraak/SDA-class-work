@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<ul>
+  {% for g in genre_data %}
+    <li> <a href="{% url 'genre' g.pk %}">{{g.name}}</a> </li>
+  {% endfor %}
+</ul>
+
+<br>
+
+
+{% endblock %}
+<!--<a href="{% url 'create_genre' %}">Create Genre</a>-->

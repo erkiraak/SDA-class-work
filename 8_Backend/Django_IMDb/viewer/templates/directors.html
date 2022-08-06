@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<ul>
+  {% for d in director_data %}
+    <li> <a href="{% url 'director' d.pk %}">{{d.name}}</a> - {{d.date_birth}}</li>
+  {% endfor %}
+</ul>
+
+<br>
+
+<a href="{% url 'create_director' %}">Create Director</a>
+
+{% endblock %}

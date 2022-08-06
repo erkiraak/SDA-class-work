@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+{{extra_data}}
+
+<p> Title: {{ movie.title }}</p>
+<p> Release Year: {{ movie.release_year }}</p>
+<p> Director: <a href ="/director/{{movie.director.pk}}">{{movie.director.name}}</a></p>
+<p> Actors: {% for actor in movie.actors.all %} <a href ="/actors/{{actor.pk}}">{{ actor.name }}</a>;{% endfor %}</p>
+<p> Description: {{ movie.description }}</p>
+<p> Genre: <a href ="/genre/{{movie.genre.pk}}">{{movie.genre.name}}</a></p>
+
+<p> Average rating: {{ movie.average_rating }}</p>
+<p> Duration: {{movie.duration}} minutes </p>
+<p> Country of origin: {{ country_name }}</p>
+<p> Language: {{ movie.language }}</p>
+<p> Trailer: <a href="{{movie.trailer_link}}">{{movie.trailer_link}}</a></p>
+<hr>
+
+<a href="{% url 'title_update' movie.pk %}">Update</a>
+<br>
+<a href="{% url 'title_delete' movie.pk %}">Delete</a>
+
+{% endblock %}

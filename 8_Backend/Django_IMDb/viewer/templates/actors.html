@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<ul>
+  {% for a in actor_data %}
+    <li> <a href="{% url 'actor' a.pk %}">{{a.name}}</a> - {{a.date_birth}}</li>
+  {% endfor %}
+</ul>
+
+<br>
+
+<a href="{% url 'create_actor' %}">Create Actor</a>
+
+{% endblock %}

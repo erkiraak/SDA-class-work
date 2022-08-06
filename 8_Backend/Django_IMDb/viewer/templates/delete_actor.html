@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+Are you sure you want to delete the actor "{{actor.name}}"?
+
+<form method="post">
+    {% csrf_token %}
+    <input type="submit", value="Delete actor">
+</form>
+
+
+{% endblock %}

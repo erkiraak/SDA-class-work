@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+Are you sure you want to delete the movie "{{movie.title}}"?
+
+<form method="post">
+    {% csrf_token %}
+    <input type="submit", value="Delete movie">
+</form>
+
+
+{% endblock %}

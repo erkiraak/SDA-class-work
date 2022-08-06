@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+{{extra_data}}
+
+<p> Name: {{ actor.name }}</p>
+<p> Birth date: {{ actor.date_birth }}</p>
+<p> Birth country: {{ country_name }}</p>
+<p> Bio: {{ actor.bio }}</p>
+
+
+
+<hr>
+
+<a href="{% url 'actor_update' actor.pk %}">Update</a>
+<br>
+<a href="{% url 'actor_delete' actor.pk %}">Delete</a>
+
+{% endblock %}
