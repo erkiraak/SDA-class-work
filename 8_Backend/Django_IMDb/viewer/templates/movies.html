@@ -3,6 +3,21 @@
 
 {% block content %}
 
+<div class="container">
+  <form method="get">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for a movie" name="search">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  </form>
+</div>
+
+
+
 <ul>
   {% for m in movies_data %}
     <li> <a href="{% url 'title' m.pk %}">{{m.title}}</a> - {{m.release_year}}</li>

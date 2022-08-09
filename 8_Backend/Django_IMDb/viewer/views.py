@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.utils.datastructures import MultiValueDictKeyError
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.db.models import Q
 from .models import Movie, Director, Actor, Genre
 from .constants import COUNTRIES_CHOICES, GENRES, DIRECTORS, MOVIES, ACTORS
 from .forms import ContactForm
@@ -117,6 +119,25 @@ class ListMovies(ListView):
     model = Movie
     context_object_name = 'movies_data'
 
+    def get_queryset(self):
+        movies = Movie.objects.all()
+        search_query = self.request.GET.get('search')
+        if search_query is not None:
+            movies = movies.filter(
+                Q(title__icontains=search_query) |
+                Q(description__icontains=search_query) |
+                Q(director__name__icontains=search_query) |
+                Q(genre__name__icontains=search_query) |
+                Q(actors__name__icontains=search_query) |
+                Q(release_year__icontains=search_query) |
+                Q(average_rating__icontains=search_query) |
+                Q(duration__icontains=search_query) |
+                Q(language__icontains=search_query) |
+                Q(country_of_origin__icontains=search_query)
+            )
+            movies = movies.order_by('-release_year', 'title')
+        return movies
+
 
 class ListActors(ListView):
     template_name = 'actors.html'
@@ -136,25 +157,28 @@ class ListGenres(ListView):
     context_object_name = 'genre_data'
 
 
-class CreateMovie(CreateView):
+class CreateMovie(PermissionRequiredMixin, CreateView):
     template_name = 'create_movie.html'
     model = Movie
     success_url = reverse_lazy('list_movies')
     fields = '__all__'
+    permission_required = 'viewer.add_movie'
 
 
-class CreateActor(CreateView):
+class CreateActor(PermissionRequiredMixin, CreateView):
     template_name = 'create_actor.html'
     model = Actor
     success_url = reverse_lazy('list_actors')
     fields = '__all__'
+    permission_required = 'viewer.add_actor'
 
 
-class CreateDirector(CreateView):
+class CreateDirector(PermissionRequiredMixin, CreateView):
     template_name = 'create_director.html'
     model = Director
     success_url = reverse_lazy('list_directors')
     fields = '__all__'
+    permission_required = 'viewer.add_director'
 
 
 class DetailMovie(DetailView):
@@ -211,46 +235,52 @@ class DetailGenre(DetailView):
     context_object_name = 'genre'
 
 
-class UpdateMovie(UpdateView):
+class UpdateMovie(PermissionRequiredMixin, UpdateView):
     template_name = 'update_movie.html'
     model = Movie
     success_url = reverse_lazy('list_movies')
     fields = '__all__'
+    permission_required = 'viewer.change_movie'
 
 
-class UpdateActor(UpdateView):
+class UpdateActor(PermissionRequiredMixin, UpdateView):
     template_name = 'update_actor.html'
     model = Actor
     success_url = reverse_lazy('list_actors')
     fields = '__all__'
+    permission_required = 'viewer.change_actor'
 
 
-class UpdateDirector(UpdateView):
+class UpdateDirector(PermissionRequiredMixin, UpdateView):
     template_name = 'update_director.html'
     model = Director
     success_url = reverse_lazy('list_directors')
     fields = '__all__'
+    permission_required = 'viewer.change_director'
 
 
-class DeleteMovie(DeleteView):
+class DeleteMovie(PermissionRequiredMixin, DeleteView):
     template_name = 'delete_movie.html'
     model = Movie
     success_url = reverse_lazy('list_movies')
     context_object_name = 'movie'
+    permission_required = 'viewer.delete_movie'
 
 
-class DeleteActor(DeleteView):
+class DeleteActor(PermissionRequiredMixin, DeleteView):
     template_name = 'delete_actor.html'
     model = Actor
     success_url = reverse_lazy('list_actors')
     context_object_name = 'actor'
+    permission_required = 'viewer.delete_actor'
 
 
-class DeleteDirector(DeleteView):
+class DeleteDirector(PermissionRequiredMixin, DeleteView):
     template_name = 'delete_director.html'
     model = Director
     success_url = reverse_lazy('list_directors')
     context_object_name = 'director'
+    permission_required = 'viewer.delete_director'
 
 
 class ContactPage(FormView):
@@ -262,7 +292,6 @@ class ContactPage(FormView):
         print("Form received!")
         print(form.cleaned_data)
         return super().form_valid(form)
-
 
 # def movie_thor(request) -> HttpResponse:
 #     return HttpResponse(movie_database["Thor"])
